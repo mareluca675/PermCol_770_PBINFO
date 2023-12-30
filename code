@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long n, m, mat[1001][1001], i, j, k, minim = 1000001, maxim = -1000001, lmax, cmax, lmin, cmin;
+bool ok;
+
+int main()
+{
+    cin >> n >> m;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        for(j = 1; j <= m; j ++)
+        {
+            cin >> mat[i][j];
+        }
+    }
+    
+    for(i = 1; i <= n; i ++)
+    {
+        for(j = 1; j < m; j ++)
+        {
+            swap(mat[i][j], mat[i][j + 1]);
+        }
+    }
+    
+    for(i = 1; i <= n; i ++)
+    {
+        for(j = 1; j <= m; j ++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        
+        cout << '\n';
+    }
+    
+    return 0;
+}
